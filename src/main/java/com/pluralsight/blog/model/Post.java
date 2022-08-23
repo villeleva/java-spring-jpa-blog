@@ -18,11 +18,19 @@ public class Post {
     private String author;
     @Temporal(TemporalType.DATE)
     private Date date;
+    @ManyToOne
+    private Category category;
 
     public Post() {
         super();
     }
 
+    public Category getCategory() {
+        return this.category;
+    }
+    public void setCategory(Category category) {
+        this.category = category;
+    }
     public Post(Long id, String title, String lead, String body, String author, Date date) {
         this();
         this.id = id;
